@@ -69,6 +69,7 @@ public class RecursionFunTest {
     assertEquals("1,023,004,567", rf.intWithCommas(1023004567));
   }
 
+  // PASSED
   @Test
   public void testReverseWithLengthThree() {
     int[] a = { 2, 4, 6 };
@@ -82,6 +83,7 @@ public class RecursionFunTest {
     assertEquals(2, a[0]);
   }
 
+  // PASSED
   @Test
   public void testReverse() {
     int[] b = { 2 };
@@ -111,6 +113,7 @@ public class RecursionFunTest {
     assertEquals(3, rf.arrayRange(new int[] { -3, -2, -5, -4 }));
   }
 
+  // PASSED
   @Test
   public void testIssorted() {
     assertTrue(rf.isSorted(new int[] { 1, 2, 3 }));

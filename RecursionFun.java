@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Complete the seven methods methods in this file using recursion, no loops. 
  * Also complete these three methods inside LinkedList<E>:
@@ -91,12 +93,24 @@ public class RecursionFun {
   // If not isSorted, return false.
   public boolean isSorted(int[] nums) {
     // Need to send down 0 to keep track of the index
-    return ! true;
+	  int n = nums.length;
+	  if (n == 0 || n == 1)
+		  return true;
+	  if (nums[n-2] > nums[n-1])
+		  return false;
+	  return isSorted(Arrays.copyOfRange(nums, 0, n-2));
+	  
   }
+  
 
   // Complete method found to return true if search is found in strs.
   // If not found, return false. Use equals, not ==.
   public boolean found(String search, String[] strs) {
-     return ! true;
+	  int n = strs.length;
+	  if(n == 0)
+		  return false;
+	  if(strs[n-1].equals(search))
+		  return true;
+	  return found(search, Arrays.copyOfRange(strs, 0, n-1));
   }
 }
