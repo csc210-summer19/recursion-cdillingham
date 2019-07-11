@@ -13,14 +13,20 @@
  * 
  * We will not be using code coverage for points.
  *
- * @author Rick Mercer and Your Name
+ * @author Rick Mercer and Chloe Dillingham
  */
 public class RecursionFun {
 
   // Complete recursive method combinations that returns from n choose k.
   // This method is described in 17_SimpleRecursion.pptx.
   public int combinations(int n, int k) {
-    return Integer.MIN_VALUE;
+    if(k == 1)
+    	return n;
+    if(n==k)
+    	return 1;
+    else {
+    	return (combinations(n-1, k-1) + combinations(n-1, k));
+    }
   }
 
  
@@ -35,7 +41,11 @@ public class RecursionFun {
   // Precondition: n >= 0
   public String intWithCommas(int n) {
     // TODO: Implement this method using recursion. Do not use a loop
-    return "Under construction";
+    if(n <= 999)
+    	return "" + n;
+    return intWithCommas(n / 1000) + "," + String.format("%03d", n % 1000);
+    	
+
   }
 
   // Write recursive method reverseArray that reverses the array elements in a
@@ -54,12 +64,19 @@ public class RecursionFun {
     // like x and x.length to keep track of array the indexes
     // with no loop. Here is an example with the private helper
     // immediately below.
-    reverseArray(x, 0, x.length);
+    reverseArray(x, 0, x.length-1);
   }
 
   private void reverseArray(int[] x, int index, int len) {
     // TODO: Complete this method with a recursive algorithm. 
     // Do NOT use a loop.
+	  if (index < len) {
+		  int temp = x[index];
+		  x[index] = x[len];
+		  x[len] = temp;
+		  reverseArray(x, ++index, --len);//Recursive
+	  }
+	  
   }
 
   // Write recursive method arrayRange that returns the maximum

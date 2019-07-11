@@ -1,3 +1,5 @@
+
+
 // A unit test for Recursion fun that require 
 // Free standing methods like combinations and arrayRange
 // 3 methods in LinkedList<E>
@@ -6,7 +8,7 @@
 // -- duplicateElement(E)
 // -- private boolean findExit(int row, int col) 
 //
-// Programmer: Rick Mercer
+// Programmer: Rick Mercer and Chloe Dillingham
 //
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -17,6 +19,7 @@ public class RecursionFunTest {
 
   private RecursionFun rf = new RecursionFun();
 
+  //PASSED
   @Test
   public void testCombinations1() {
     // some simple ones
@@ -28,6 +31,7 @@ public class RecursionFunTest {
     assertEquals(2598960, rf.combinations(52, 5));
   }
 
+  //PASSED
   @Test
   public void testCombinations2() {
     // n choices when choosing only 1
@@ -43,7 +47,7 @@ public class RecursionFunTest {
     assertEquals(2598960, rf.combinations(52, 5));
   }
 
-
+  // PASSED
   @Test
   public void testIntWithCommas1() {
     assertEquals("9", rf.intWithCommas(9));
@@ -56,6 +60,7 @@ public class RecursionFunTest {
     assertEquals("1,023,004,567", rf.intWithCommas(1023004567));
   }
 
+//PASSED
   @Test
   public void testIntWithCommasWithLeadingZeros() {
     assertEquals("1,007", rf.intWithCommas(1007));
